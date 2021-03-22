@@ -20,4 +20,8 @@ export class DeviceItemComponent implements OnInit {
     this.delete.emit(this.deviceItem);
   }
 
+  onEdit(){
+    this.edit.emit(this.deviceItem);
+  }
+
 }

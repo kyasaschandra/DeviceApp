@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginItemService} from './login-item.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DeviceApp';
-
-  
-
-  onDeviceItemDelete(deviceItem){}
+  constructor(private loginItemService: LoginItemService){}
+  logged = this.loginItemService.logged;
 }

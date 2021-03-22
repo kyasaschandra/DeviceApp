@@ -60,4 +60,8 @@ export class DeviceItemService {
       this.deviceItems.splice(index, 1);
     }
   }
+
+  update(deviceItem){
+    console.log("Got in to Main Edit");
+  }
 }

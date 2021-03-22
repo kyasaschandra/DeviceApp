@@ -5,7 +5,10 @@
 </div>
 </header>
 <div id="basebody">
-    <app-device-item-form></app-device-item-form>
-    <app-device-item-list></app-device-item-list>
+    <app-login-page *ngIf="!this.logged"></app-login-page>
+    <app-device-item-form ></app-device-item-form>
+    <app-device-item-list ></app-device-item-list>
+    <!-- <app-device-item-form *ngIf="this.logged"></app-device-item-form>
+    <app-device-item-list *ngIf="this.logged"></app-device-item-list> -->
 </div>
 </section>

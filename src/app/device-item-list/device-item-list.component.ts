@@ -19,4 +19,9 @@ export class DeviceItemListComponent implements OnInit {
     this.deviceItemService.delete(deviceItem); 
   }
 
+  onDeviceItemEdit(deviceItem){
+    this.deviceItemService.update(deviceItem);
+  }
+
+
 }
