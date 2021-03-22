@@ -11,6 +11,7 @@ import {lookupListToken} from '../providers';
 })
 export class DeviceItemFormComponent implements OnInit {
   form: FormGroup;
+  New=false;
 
   
 
@@ -44,5 +45,10 @@ export class DeviceItemFormComponent implements OnInit {
   onSubmit(deviceItem){
     console.log(deviceItem);
     this.deviceItemService.add(deviceItem);
+    this.New = false;
+  }
+
+  onNew(){
+    this.New=true;
   }
 }

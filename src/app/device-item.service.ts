@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -40,24 +41,32 @@ export class DeviceItemService {
       OsType: "Os 6",
       battery : 100,
       memory:"4 GB"
-    },
-
-    
-
+    }
   ];
+  constructor(){
+    this.deviceItems=JSON.parse(localStorage.getItem("Devices"));
+    localStorage.setItem("Devices",JSON.stringify(this.deviceItems))}
 
+  
+  
   get(){
+    this.deviceItems = JSON.parse(localStorage.getItem("Devices"));
     return this.deviceItems;
   }
 
   add(deviceItem) {
+    //this.deviceItems = JSON.parse(localStorage.getItem("Devices"));
     this.deviceItems.push(deviceItem);
+    localStorage.removeItem("Devices");
+    localStorage.setItem("Devices",JSON.stringify(this.deviceItems));
   }
 
   delete(deviceItem){
-    let index = this.deviceItems.indexOf(deviceItem);
-    if(index>=0) {
-      this.deviceItems.splice(index, 1);
-    }
+    //this.deviceItems = JSON.parse(localStorage.getItem("Devices"));
+    var index = this.deviceItems.indexOf(deviceItem);
+    this.deviceItems.splice(index,1)
+    localStorage.removeItem("Devices");
+    localStorage.setItem("Devices",JSON.stringify(this.deviceItems));
+
   }
 }
